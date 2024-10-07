@@ -60,7 +60,7 @@ const Countries = ({countries, handleShow}) => {
     useEffect(() => {
       countryService.fetchWeather(countryName)
         .then(response => {
-          console.log('Weather data:', response);
+          // console.log('Weather data:', response);
           setWeather(response); // Set weather data
         });
     }, [countryName]);
@@ -76,8 +76,6 @@ const Countries = ({countries, handleShow}) => {
       </div>
     )
   }
-  
-  
 
 const App = () => {
   const [countries, setCountries] = useState([])

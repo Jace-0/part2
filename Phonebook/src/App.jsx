@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import phoneService from './services/phonebook'
 
-
 const Filter = ({searchTerm, handleSearchChange}) => {
   return (
     <div>
@@ -57,12 +56,12 @@ const Notification = ({ message }) => {
 
 const App = () => {
   const [persons, setPersons] = useState([]) 
-  const [newName, setNewName] = useState(null)
-  const [newNumber, setNewNumber] = useState(null)
+  const [newName, setNewName] = useState('')
+  const [newNumber, setNewNumber] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
   const [notification, setNotification] = useState(null)
 
-  useEffect(() => { 
+  useEffect(() => {
     phoneService
       .getAll()
       .then(initialResource => {
@@ -162,12 +161,10 @@ const App = () => {
   }
 
   const handleNameChange = (event) => {
-    console.log(event.target.value)
     setNewName(event.target.value)
   }
 
   const handleNumberChange = (event) =>{
-    console.log(event.target.value)
     setNewNumber(event.target.value)
   }
 
@@ -179,7 +176,6 @@ const App = () => {
   const filteredPersons = persons.filter(person => person.name &&
     person.name.toLowerCase().includes(searchTerm.toLowerCase())
   )
-
 
   return (
     <div>
