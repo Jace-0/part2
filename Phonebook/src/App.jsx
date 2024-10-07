@@ -62,7 +62,7 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [notification, setNotification] = useState(null)
 
-  useEffect(() => {
+  useEffect(() => { 
     phoneService
       .getAll()
       .then(initialResource => {
