@@ -3,7 +3,6 @@ import axios from 'axios'
 const baseUrl = 'http://localhost:3005/countries'
 const weatherAPIKey = import.meta.env.VITE_WEATHER_API_KEY
 
-console.log(weatherAPIKey)
 
 const getAll = () => {
     const request = axios.get(baseUrl)
